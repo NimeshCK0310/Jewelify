@@ -1,0 +1,75 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    width: 100px;
+  }
+  
+  .nav {
+    background-color: #f0f0f0;
+    padding: 1rem 2rem;
+  }
+  
+  .nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav li {
+    display: inline-block;
+    margin-right: 1rem;
+  }
+  
+  .nav a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .main {
+    padding: 1rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .card {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    width: calc(33% - 1rem);
+  }
+  
+  .card h2 {
+    margin-bottom: 1rem;
+  }
+  
+  .recent-orders table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .recent-orders th,
+  .recent-orders td {
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .recent-orders thead th {
+    background-color: #f0f0f0;
+  }
+  

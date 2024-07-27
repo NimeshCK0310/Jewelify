@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #616865;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 90%;
+            margin: 30px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            font-size: 24px;
+            color: #333;
+        }
+        .cart-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #eee;
+            padding: 20px 0;
+            background-color: #fafafa;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+        }
+        .cart-item:hover {
+            transform: scale(1.02);
+        }
+        .cart-item img {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+        .cart-item-details {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+        }
+        .cart-item-details h3 {
+            margin: 0 0 10px 0;
+            font-size: 18px;
+            color: #333;
+        }
+        .cart-item-details p {
+            margin: 0;
+            color: #888;
+        }
+        .cart-item-actions {
+            display: flex;
+            align-items: center;
+        }
+        .cart-item-quantity {
+            display: flex;
+            align-items: center;
+        }
+        .cart-item-quantity button {
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 16px;
+            color: #555;
+            padding: 5px;
+        }
+        .cart-item-quantity input {
+            width: 40px;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin: 0 5px;
+        }
+        .cart-item-price {
+            flex: 1;
+            text-align: right;
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+        }
+        .cart-item-remove {
+            margin-left: 30px;
+            cursor: pointer;
+            color: #888;
+            font-size: 20px;
+        }
+        .cart-item-remove:hover {
+            color: #e64a19;
+        }
+        .cart-summary {
+            text-align: right;
+            margin-top: 20px;
+        }
+        .cart-summary p {
+            margin: 5px 0;
+            font-size: 16px;
+            color: #333;
+        }
+        .cart-summary p strong {
+            font-size: 18px;
+        }
+        .btn-checkout {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 15px;
+            background-color: #ff5722;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease, color 0.3s ease; /* Added color transition */
+        }
+        .btn-checkout:hover {
+            background-color: #0c0c0b;
+        }
+        .btn-checkout a {
+            color: inherit; /* Ensures link color matches button text color */
+            text-decoration: none; /* Removes underline */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-shopping-cart"></i> Shopping Cart</h1>
+        </div>
+        
+        <div class="cart-section">
+            <p class="cart-title">Cart Items</p>
+            <div class="cart-item">
+                <img src="../Diamond-Ring/diamondring2.jpg" alt="Ruby Ring">
+                <div class="cart-item-details">
+                    <h3>Ruby and diamonds double halo yellow gold platted <br> white gold Ring</h3>
+                    <p>Diamond Ring</p>
+                </div>
+                <div class="cart-item-actions">
+                    <div class="cart-item-quantity">
+                        <button><i class="fas fa-minus"></i></button>
+                        <input type="number" value="1" min="1">
+                        <button><i class="fas fa-plus"></i></button>
+                    </div>
+                    <div class="cart-item-price">LKR 536,000</div>
+                    <div class="cart-item-remove"><i class="fas fa-trash-alt"></i></div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <img src="../pendants/colored stone/coloredpendant2.jpg" alt="Aquamarine Pendant">
+                <div class="cart-item-details">
+                    <h3>Aquamarine & Marquise Round Pendant</h3>
+                    <p>Colored Stone Pendant</p>
+                </div>
+                <div class="cart-item-actions">
+                    <div class="cart-item-quantity">
+                        <button><i class="fas fa-minus"></i></button>
+                        <input type="number" value="1" min="1">
+                        <button><i class="fas fa-plus"></i></button>
+                    </div>
+                    <div class="cart-item-price">LKR 159,000</div>
+                    <div class="cart-item-remove"><i class="fas fa-trash-alt"></i></div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <img src="../Earrings/Hanging/hanging2.jpg" alt="Daisy Earrings">
+                <div class="cart-item-details">
+                    <h3>Sterling silver boho daisy dangle Earrings</h3>
+                    <p>Hanging Earrings</p>
+                </div>
+                <div class="cart-item-actions">
+                    <div class="cart-item-quantity">
+                        <button><i class="fas fa-minus"></i></button>
+                        <input type="number" value="1" min="1">
+                        <button><i class="fas fa-plus"></i></button>
+                    </div>
+                    <div class="cart-item-price">LKR 326,000</div>
+                    <div class="cart-item-remove"><i class="fas fa-trash-alt"></i></div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <img src="../necklaces/colored stones/colneck2.jpeg" alt="Ruby Ring">
+                <div class="cart-item-details">
+                    <h3>Anderoli Silver & Gold Dainty Necklace</h3>
+                    <p>Necklace</p>
+                </div>
+                <div class="cart-item-actions">
+                    <div class="cart-item-quantity">
+                        <button><i class="fas fa-minus"></i></button>
+                        <input type="number" value="1" min="1">
+                        <button><i class="fas fa-plus"></i></button>
+                    </div>
+                    <div class="cart-item-price">LKR 480,000</div>
+                    <div class="cart-item-remove"><i class="fas fa-trash-alt"></i></div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <img src="../cufflinks/cuff6.jpg" alt="Blue Sapphire Cufflinks">
+                <div class="cart-item-details">
+                    <h3>Blue Sapphire & Silver Cufflinks</h3>
+                    <p>Cufflinks</p>
+                </div>
+                <div class="cart-item-actions">
+                    <div class="cart-item-quantity">
+                        <button><i class="fas fa-minus"></i></button>
+                        <input type="number" value="1" min="1">
+                        <button><i class="fas fa-plus"></i></button>
+                    </div>
+                    <div class="cart-item-price">LKR 253,000</div>
+                    <div class="cart-item-remove"><i class="fas fa-trash-alt"></i></div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <img src="../Bangles and bracelets/colored stone/colbrace5.jpg" alt="Mint Color Natural Bracelet">
+                <div class="cart-item-details">
+                    <h3>Mint Color Natural Bracelet</h3>
+                    <p>Bangles & Bracelets</p>
+                </div>
+                <div class="cart-item-actions">
+                    <div class="cart-item-quantity">
+                        <button><i class="fas fa-minus"></i></button>
+                        <input type="number" value="1" min="1">
+                        <button><i class="fas fa-plus"></i></button>
+                    </div>
+                    <div class="cart-item-price">LKR 190,850</div>
+                    <div class="cart-item-remove"><i class="fas fa-trash-alt"></i></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cart-section">
+            <p class="cart-title">Summary</p>
+            <div class="cart-summary">
+                <p><strong>Subtotal:</strong> LKR 1,944,850</p>
+                <p><strong>Tax (5%):</strong> LKR 97,242.50</p>
+                <p><strong>Total:</strong> LKR 2,042,092.50</p>
+            </div>
+        </div>
+        
+        <button class="btn-checkout">
+            <a href="../web/Payment.html">
+            <i class="fas fa-credit-card">
+            </i> <span style="color: #fff;">Proceed to Checkout</span>
+        </a>
+        </button>
+    </div>
+</body>
+</html>
